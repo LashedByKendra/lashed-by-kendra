@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lashed by Kendra | Lashes & Waxing</title>
+  <meta name="description" content="Lashed by Kendra — lash extensions and waxing services in Brasher Falls, NY.">
+  <style>
+    :root {
+      --black: #0b0b0b;
+      --white: #ffffff;
+      --soft: #f4f4f2;
+      --gray: #777;
+      --line: #dededb;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--black);
+      background: var(--white);
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255,255,255,.96);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(10px);
+    }
+    .nav {
+      max-width: 1180px;
+      margin: auto;
+      min-height: 76px;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .logo {
+      font-size: 19px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .nav-links {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+    .nav-links a {
+      padding: 10px 14px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .nav-links a:hover { background: var(--soft); }
+    .book-nav {
+      background: var(--black) !important;
+      color: var(--white);
+      border-radius: 999px;
+      padding: 11px 18px !important;
+    }
+
+    .hero {
+      min-height: 650px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 90px 24px;
+      background: var(--black);
+      color: var(--white);
+    }
+    .hero-inner { max-width: 850px; }
+    .eyebrow {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      opacity: .72;
+      margin-bottom: 20px;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(48px, 10vw, 94px);
+      line-height: .95;
+      letter-spacing: -4px;
+      text-transform: uppercase;
+    }
+    .hero p {
+      max-width: 600px;
+      margin: 28px auto;
+      font-size: 17px;
+      color: #d5d5d5;
+    }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 0 26px;
+      border: 1px solid var(--black);
+      background: var(--black);
+      color: var(--white);
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      transition: .2s ease;
+    }
+    .button:hover { transform: translateY(-2px); opacity: .85; }
+    .button.light {
+      background: var(--white);
+      color: var(--black);
+      border-color: var(--white);
+    }
+
+    .section {
+      max-width: 1180px;
+      margin: auto;
+      padding: 90px 24px;
+    }
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 30px;
+      margin-bottom: 42px;
+    }
+    .section-heading h2 {
+      margin: 0;
+      font-size: clamp(34px, 5vw, 56px);
+      line-height: 1;
+      letter-spacing: -2px;
+      text-transform: uppercase;
+    }
+    .section-heading p {
+      max-width: 440px;
+      color: var(--gray);
+      margin: 0;
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+    .intro-card {
+      background: var(--white);
+      padding: 42px;
+    }
+    .intro-card h3 {
+      margin: 0 0 10px;
+      font-size: 25px;
+      text-transform: uppercase;
+      letter-spacing: -1px;
+    }
+    .intro-card p { color: var(--gray); }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+    .service {
+      border: 1px solid var(--line);
+      padding: 24px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 6px 20px;
+      transition: .2s ease;
+    }
+    .service:hover {
+      border-color: var(--black);
+      transform: translateY(-2px);
+    }
+    .service h3 {
+      margin: 0;
+      font-size: 18px;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+    }
+    .price {
+      font-size: 20px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+    .service p {
+      grid-column: 1 / -1;
+      margin: 4px 0 0;
+      color: var(--gray);
+      font-size: 14px;
+    }
+
+    .note {
+      margin-top: 24px;
+      padding: 24px;
+      background: var(--soft);
+      border-left: 3px solid var(--black);
+    }
+    .note strong {
+      display: block;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 7px;
+    }
+    .note p { margin: 0; color: #555; }
+
+    .cta {
+      background: var(--black);
+      color: var(--white);
+      text-align: center;
+      padding: 100px 24px;
+    }
+    .cta h2 {
+      margin: 0 auto 20px;
+      max-width: 800px;
+      font-size: clamp(38px, 6vw, 68px);
+      line-height: 1;
+      letter-spacing: -3px;
+      text-transform: uppercase;
+    }
+    .cta p {
+      color: #cfcfcf;
+      max-width: 550px;
+      margin: 0 auto 28px;
+    }
+
+    .about-box {
+      max-width: 800px;
+      font-size: 20px;
+      color: #444;
+    }
+
+    .policies {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+    .policy {
+      border-top: 1px solid var(--black);
+      padding: 20px 0;
+    }
+    .policy h3 {
+      margin: 0 0 7px;
+      text-transform: uppercase;
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+    .policy p { margin: 0; color: var(--gray); font-size: 14px; }
+
+    footer {
+      background: var(--black);
+      color: var(--white);
+      padding: 42px 24px;
+    }
+    .footer-inner {
+      max-width: 1180px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    footer p { margin: 0; color: #aaa; font-size: 13px; }
+
+    .mobile-toggle { display: none; }
+
+    @media (max-width: 760px) {
+      .nav { min-height: 68px; }
+      .mobile-toggle {
+        display: block;
+        border: 1px solid var(--line);
+        background: var(--white);
+        border-radius: 999px;
+        padding: 8px 13px;
+        font-weight: 800;
+        cursor: pointer;
+      }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 68px;
+        left: 0;
+        right: 0;
+        background: var(--white);
+        border-bottom: 1px solid var(--line);
+        padding: 10px 24px 18px;
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { text-align: center; }
+      .hero { min-height: 580px; }
+      .intro-grid, .service-grid, .policies { grid-template-columns: 1fr; }
+      .section-heading { display: block; }
+      .section-heading p { margin-top: 18px; }
+      .intro-card { padding: 30px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a class="logo" href="#home">Lashed by Kendra</a>
+    <button class="mobile-toggle" onclick="toggleMenu()" aria-label="Open menu">MENU</button>
+    <div class="nav-links" id="navLinks">
+      <a href="#home" onclick="closeMenu()">Home</a>
+      <a href="#lashes" onclick="closeMenu()">Lashes</a>
+      <a href="#waxing" onclick="closeMenu()">Waxing</a>
+      <a href="#about" onclick="closeMenu()">About</a>
+      <a href="#policies" onclick="closeMenu()">Policies</a>
+      <!-- Replace # with your Square booking URL -->
+      <a class="book-nav" href="https://app.squareup.com/appointments/book/8rhrnolj94f8es/LQEVCHW5TR9AN/start" target="_blank">Book</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="hero-inner">
+      <div class="eyebrow">Lashes • Waxing • Beauty</div>
+      <h1>Lashed<br>by Kendra</h1>
+      <p>Modern lash extensions and waxing services with a clean, comfortable experience.</p>
+      <a class="button light" href="https://app.squareup.com/appointments/book/8rhrnolj94f8es/LQEVCHW5TR9AN/start" target="_blank">Book Appointment</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-heading">
+      <h2>Beauty,<br>your way.</h2>
+      <p>Choose from lash extensions or waxing services, all in one place.</p>
+    </div>
+    <div class="intro-grid">
+      <div class="intro-card">
+        <h3>Lashes</h3>
+        <p>Classic, wet set, hybrid, volume and mega volume extensions, plus fills and removals.</p>
+        <a class="button" href="#lashes">View Lashes</a>
+      </div>
+      <div class="intro-card">
+        <h3>Waxing</h3>
+        <p>Facial, body, bikini and Brazilian waxing with introductory pricing while I continue growing my technique.</p>
+        <a class="button" href="#waxing">View Waxing</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="lashes">
+    <div class="section-heading">
+      <h2>Lash<br>Extensions</h2>
+      <p>Introductory lash pricing while I continue building my technique, speed and confidence.</p>
+    </div>
+    <div class="service-grid">
+      <article class="service"><h3>Classic</h3><span class="price">$70</span><p>Individual extensions for a clean, natural look.</p></article>
+      <article class="service"><h3>Wet Set</h3><span class="price">$80</span><p>A darker, textured lash look using narrow styling.</p></article>
+      <article class="service"><h3>Hybrid</h3><span class="price">$85</span><p>A blend of classic and volume styling.</p></article>
+      <article class="service"><h3>Volume</h3><span class="price">$95</span><p>Soft volume for a fuller lash look.</p></article>
+      <article class="service"><h3>Mega Volume</h3><span class="price">$105</span><p>Maximum fullness using lightweight volume styling.</p></article>
+      <article class="service"><h3>2-Week Fill</h3><span class="price">$50</span><p>Maintenance for clients returning around two weeks.</p></article>
+      <article class="service"><h3>3-Week Fill</h3><span class="price">$60</span><p>Maintenance for clients returning around three weeks.</p></article>
+      <article class="service"><h3>4-Week Fill</h3><span class="price">$70</span><p>Maintenance for clients returning around four weeks.</p></article>
+      <article class="service"><h3>Removal</h3><span class="price">$20</span><p>Professional removal of lash extensions.</p></article>
+      <article class="service"><h3>Removal + New Set</h3><span class="price">FREE</span><p>Removal is included when a new full set is booked.</p></article>
+    </div>
+    <div class="note">
+      <strong>Lash service note</strong>
+      <p>Foreign fills, bottom lashes and separate wispy/textured upgrades are not currently offered.</p>
+    </div>
+  </section>
+
+  <section class="section" id="waxing">
+    <div class="section-heading">
+      <h2>Waxed<br>by Kendra</h2>
+      <p>Introductory pricing while I continue building my technique, speed and confidence.</p>
+    </div>
+    <div class="service-grid">
+      <article class="service"><h3>Brow Wax</h3><span class="price">$15</span><p>Clean up and shape the brows for a polished look.</p></article>
+      <article class="service"><h3>Lip Wax</h3><span class="price">$10</span><p>Quick removal of unwanted hair from the upper lip area.</p></article>
+      <article class="service"><h3>Chin Wax</h3><span class="price">$10</span><p>Removes unwanted hair from the chin area for a smooth finish.</p></article>
+      <article class="service"><h3>Full Face Wax</h3><span class="price">$30</span><p>Includes brows, lip, chin and other facial areas as needed.</p></article>
+      <article class="service"><h3>Underarm Wax</h3><span class="price">$20</span><p>Removes unwanted underarm hair for a smooth finish.</p></article>
+      <article class="service"><h3>Bikini Wax</h3><span class="price">$30</span><p>Removes hair along the bikini line and surrounding area.</p></article>
+      <article class="service"><h3>Brazilian Wax</h3><span class="price">$55</span><p>Full removal of hair from the front and back, with a smooth, clean finish.</p></article>
+      <article class="service"><h3>Full Leg Wax</h3><span class="price">$50</span><p>Removes unwanted hair from the entire leg for smooth, long-lasting results.</p></article>
+      <article class="service"><h3>Full Arm Wax</h3><span class="price">$40</span><p>Removes unwanted hair from the entire arm for a smooth finish.</p></article>
+      <article class="service"><h3>Nose Wax</h3><span class="price">$10</span><p>Gentle removal of unwanted visible nose hair.</p></article>
+    </div>
+    <div class="note">
+      <strong>Pricing note</strong>
+      <p>Introductory pricing is currently offered while I continue building my experience, technique, speed and confidence. As my skills and experience grow, service prices may increase. Thank you for supporting me as I grow my small business! ♡</p>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="section-heading">
+      <h2>About<br>Kendra</h2>
+      <p>Small business. Big goals.</p>
+    </div>
+    <div class="about-box">
+      <p>Welcome to Lashed by Kendra! I'm building my beauty business one client at a time, focusing on lashes and waxing while continuing to improve my technique, speed and confidence.</p>
+      <p>Thank you for supporting my small business and being part of the journey. ♡</p>
+    </div>
+  </section>
+
+  <section class="section" id="policies">
+    <div class="section-heading">
+      <h2>Policies</h2>
+      <p>Please review the studio policies before booking your appointment.</p>
+    </div>
+    <div class="policies">
+      <div class="policy"><h3>Appointments</h3><p>A deposit is required to book an appointment through the online booking system.</p></div>
+      <div class="policy"><h3>Cancellations</h3><p>Please provide as much notice as possible if you need to cancel or reschedule.</p></div>
+      <div class="policy"><h3>Late Arrivals</h3><p>Arriving late may shorten your appointment time or require rescheduling.</p></div>
+      <div class="policy"><h3>No-Shows</h3><p>No-shows will result in a loss of your deposit.</p></div>
+      <div class="policy"><h3>Lash Fills</h3><p>Fills are available only within the listed fill timeframes and for qualifying existing sets.</p></div>
+      <div class="policy"><h3>Guests</h3><p>Please arrive prepared for your appointment and limit additional guests unless previously discussed.</p></div>
+    </div>
+  </section>
+
+  <section class="cta" id="book">
+    <h2>Ready to book?</h2>
+    <p>Choose your service and reserve your appointment through Square.</p>
+    <a class="button light" href="https://app.squareup.com/appointments/book/8rhrnolj94f8es/LQEVCHW5TR9AN/start" target="_blank">Book Appointment</a>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <strong>Lashed by Kendra</strong>
+      <p>Lashes & Waxing</p>
+    </div>
+    <div>
+      <p>3 Main Street, Brasher Falls, NY 13613</p>
+      <p>© 2026 Lashed by Kendra</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // PASTE YOUR SQUARE BOOKING LINK BETWEEN THE QUOTES BELOW.
+  const SQUARE_BOOKING_URL = "https://app.squareup.com/appointments/book/8rhrnolj94f8es/LQEVCHW5TR9AN/start";
+
+  function bookNow() {
+    if (!SQUARE_BOOKING_URL) {
+      alert("Your Square booking link still needs to be added. Send it to Kendra's website setup.");
+      return false;
+    }
+    window.open(SQUARE_BOOKING_URL, "_blank");
+    return false;
+  }
+
+  function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("open");
+  }
+
+  function closeMenu() {
+    document.getElementById("navLinks").classList.remove("open");
+  }
+</script>
+</body>
+</html>
